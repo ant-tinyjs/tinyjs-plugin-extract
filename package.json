@@ -1,0 +1,23 @@
+{
+  "name": "@tinyjs/tinyjs-plugin-extract",
+  "version": "1.0.0",
+  "description": "Tiny.js renderer-specific plugins for exporting content from a renderer",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tnpm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ant-tinyjs/tinyjs-plugin-extract.git"
+  },
+  "keywords": [
+    "tinyjs",
+    "plugin"
+  ],
+  "author": "yiqi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ant-tinyjs/tinyjs-plugin-extract/issues"
+  },
+  "homepage": "https://github.com/ant-tinyjs/tinyjs-plugin-extract#readme"
+}
