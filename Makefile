@@ -1,5 +1,5 @@
-version = 1.0.0
-gitlab  = git@gitlab.alipay-inc.com:tiny-plugin/extract.git
+version = 1.0.1
+gitlab  = git@gitlab.alipay-inc.com:tiny-plugin/tinyjs-plugin-extract.git
 github  = https://github.com/ant-tinyjs/tinyjs-plugin-extract.git
 
 qtdeploy:
@@ -9,3 +9,4 @@ qtdeploy:
 	@git tag ${version}
 	@git push origin master --tags
 	@tnpm run qtdeploy
+	@git remote set-url origin ${github}
