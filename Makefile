@@ -8,5 +8,5 @@ qtdeploy:
 	@git commit -am 'update'
 	@git tag ${version}
 	@git push origin master --tags
-	@tnpm run qtdeploy
+	@qtdeploy all
 	@git remote set-url origin ${github}

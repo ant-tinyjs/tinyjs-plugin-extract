@@ -21,7 +21,6 @@
     "start": "webpack-dev-server --devtool source-map --inline --hot --host 0.0.0.0",
     "build": "webpack --progress --colors",
     "doc": "rm -rf docs && jsdoc README.md src -r -d docs -t node_modules/docdash",
-    "qtdeploy": "qtdeploy all",
     "lint": "eslint src/** tests/**",
     "test": "mocha ./tests --recursive --require ./tests/setup.js",
     "test-cov": "istanbul cover _mocha -- ./tests --recursive --require ./tests/setup.js",
