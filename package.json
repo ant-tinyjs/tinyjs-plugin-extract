@@ -31,7 +31,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@alipay/qingting-deploy": "^0.4.2",
     "babel-cli": "^6.23.0",
     "babel-loader": "^6.3.1",
     "babel-plugin-static-fs": "^1.1.0",
