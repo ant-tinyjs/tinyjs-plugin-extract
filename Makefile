@@ -1,4 +1,4 @@
-version = 1.0.1
+version = 1.0.2
 gitlab  = git@gitlab.alipay-inc.com:tiny-plugin/tinyjs-plugin-extract.git
 github  = https://github.com/ant-tinyjs/tinyjs-plugin-extract.git
 
