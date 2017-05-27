@@ -1,41 +1,48 @@
-var path = require('path');
-var webpack = require('webpack');
-var pkg = require('./package.json');
-var merge = require('webpack-merge');
+const path = require('path');
+const webpack = require('webpack');
+const pkg = require('./package.json');
+const merge = require('webpack-merge');
 
-var banner =
-  pkg.name + ' - ' + pkg.description + '\n' +
-  'Author: ' + pkg.author + '\n' +
-  'Version: v' + pkg.version;
+const banner = `${pkg.name}
+Description: ${pkg.description}
+Author: ${pkg.author}
+Version: v${pkg.version}`;
 
-var config = {
-  entry: {
-    healthKit: ['./src/index.js']
-  },
+const config = {
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
     filename: 'index.debug.js',
-    library: ['luna', '[name]'],
-    libraryTarget: 'umd'
   },
   plugins: [
-    new webpack.BannerPlugin(banner)
-  ]
+    new webpack.BannerPlugin(banner),
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015'],
+        },
+      },
+    ],
+  },
 };
 
 // 压缩版
-var minConfig = merge(config, {
+const minConfig = merge(config, {
   output: {
-    filename: 'index.js'
+    filename: 'index.js',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
-      }
-    })
-  ]
+        warnings: false,
+      },
+    }),
+  ],
 });
 
 module.exports = [config, minConfig];
