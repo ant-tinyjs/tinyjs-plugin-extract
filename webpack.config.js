@@ -14,6 +14,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
     filename: 'index.debug.js',
+    libraryTarget: 'amd',
   },
   plugins: [
     new webpack.BannerPlugin(banner),

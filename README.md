@@ -14,8 +14,8 @@
 
 * 也可以直接引用线上cdn地址，注意要使用最新的版本号，例如：
 
-  * https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.2/index.js
-  * https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.2/index.debug.js
+  * https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.3/index.js
+  * https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.3/index.debug.js
 
 ## 概述
 Tiny.js renderer-specific plugins for exporting content from a renderer
