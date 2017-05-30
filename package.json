@@ -1,5 +1,5 @@
 {
-  "name": "@tinyjs/tinyjs-plugin-extract",
+  "name": "tinyjs-plugin-extract",
   "version": "1.0.3",
   "author": "yiqi",
   "description": "Tiny.js renderer-specific plugins for exporting content from a renderer",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-tinyjs/tinyjs-plugin-extract.git"
+    "url": "git@gitlab.alipay-inc.com:tiny-plugin/tinyjs-plugin-extract.git"
   },
   "main": "src/index.js",
   "files": [
