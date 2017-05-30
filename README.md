@@ -30,7 +30,9 @@ Tiny.js renderer-specific plugins for exporting content from a renderer
 <script src="http://tinyjs.net/libs/tiny.debug.js"></script>
 ```
 ``` js
-var extract = require('@tinyjs/tinyjs-plugin-extract');
+require('@tinyjs/tinyjs-plugin-extract');
+// 或者
+// import extract from '@tinyjs/tinyjs-plugin-extract';
 
 // 新建 App
 const app = new Tiny.Application({
