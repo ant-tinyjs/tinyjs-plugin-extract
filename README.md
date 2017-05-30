@@ -8,17 +8,14 @@
 
 ## 引用方法
 
-* 推荐作为依赖使用
+- 推荐作为依赖使用
 
-  * `npm install @tinyjs/tinyjs-plugin-extract --save`
+  - `npm install @tinyjs/tinyjs-plugin-extract --save`
 
-* 也可以直接引用线上cdn地址，注意要使用最新的版本号，例如：
+- 也可以直接引用线上cdn地址，注意要使用最新的版本号，例如：
 
-  * https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.3/index.js
-  * https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.3/index.debug.js
-
-## 概述
-Tiny.js renderer-specific plugins for exporting content from a renderer
+  - https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.3/index.js
+  - https://a.alipayobjects.com/g/tiny-plugin/tinyjs-plugin-extract/1.0.3/index.debug.js
 
 ## 起步
 首先当然是要引入，推荐`NPM`方式，当然你也可以使用`CDN`或下载独立版本，先从几个例子入手吧！
@@ -32,7 +29,7 @@ Tiny.js renderer-specific plugins for exporting content from a renderer
 ``` js
 require('@tinyjs/tinyjs-plugin-extract');
 // 或者
-// import extract from '@tinyjs/tinyjs-plugin-extract';
+// import * as extract from '@tinyjs/tinyjs-plugin-extract';
 
 // 新建 App
 const app = new Tiny.Application({

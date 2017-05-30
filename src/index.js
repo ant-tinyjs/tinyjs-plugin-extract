@@ -21,7 +21,7 @@
 import webgl from './webgl/WebGLExtract';
 import canvas from './canvas/CanvasExtract';
 
-module.exports = Tiny.extract = {
+export {
   webgl,
   canvas,
 };

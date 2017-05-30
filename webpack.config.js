@@ -9,12 +9,15 @@ Author: ${pkg.author}
 Version: v${pkg.version}`;
 
 const config = {
-  entry: './src/index.js',
+  entry: {
+    extract: ['./src/index.js'],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
     filename: 'index.debug.js',
-    libraryTarget: 'amd',
+    libraryTarget: 'umd',
+    library: ['Tiny', '[name]'],
   },
   plugins: [
     new webpack.BannerPlugin(banner),
