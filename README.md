@@ -10,7 +10,7 @@
 
 - 推荐作为依赖使用
 
-  - `npm install @tinyjs/tinyjs-plugin-extract --save`
+  - `npm install tinyjs-plugin-extract --save`
 
 - 也可以直接引用线上cdn地址，注意要使用最新的版本号，例如：
 
@@ -27,9 +27,9 @@
 <script src="http://tinyjs.net/libs/tiny.debug.js"></script>
 ```
 ``` js
-require('@tinyjs/tinyjs-plugin-extract');
+require('tinyjs-plugin-extract');
 // 或者
-// import * as extract from '@tinyjs/tinyjs-plugin-extract';
+// import * as extract from 'tinyjs-plugin-extract';
 
 // 新建 App
 const app = new Tiny.Application({
