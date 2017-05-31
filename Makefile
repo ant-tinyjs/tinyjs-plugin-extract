@@ -1,4 +1,4 @@
-version = `cat package.json| grep version | awk -F '"' '{print $$4}'`
+version = `cat package.json| grep -w version | awk -F '"' '{print $$4}'`
 gitlab  = git@gitlab.alipay-inc.com:tiny-plugin/tinyjs-plugin-extract.git
 github  = https://github.com/ant-tinyjs/tinyjs-plugin-extract.git
 
