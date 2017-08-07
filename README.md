@@ -1,6 +1,6 @@
 # tinyjs-plugin-extract
 
-> Tiny.js renderer-specific plugins for exporting content from a renderer
+> 画布扩展，获取画布的：Image 对象、base64 格式的图片、像素值等等
 
 ## 查看demo
 
@@ -15,7 +15,7 @@
 - 也可以直接引用线上cdn地址，注意要使用最新的版本号，例如：
 
   - https://a.alipayobjects.com/g/tiny-plugins/tinyjs-plugin-extract/1.0.6/index.js
-  - https://a.alipayobjects.com/g/tiny-plugins/tinyjs-plugin-extract/1.0.6index.debug.js
+  - https://a.alipayobjects.com/g/tiny-plugins/tinyjs-plugin-extract/1.0.6/index.debug.js
 
 ## 起步
 首先当然是要引入，推荐`NPM`方式，当然你也可以使用`CDN`或下载独立版本，先从几个例子入手吧！
@@ -24,7 +24,7 @@
 
 引用 Tiny.js 源码
 ``` html
-<script src="http://tinyjs.net/libs/tiny.debug.js"></script>
+<script src="https://a.alipayobjects.com/g/tiny/tiny/1.0.2/tiny.js"></script>
 ```
 ``` js
 require('tinyjs-plugin-extract');
@@ -32,9 +32,7 @@ require('tinyjs-plugin-extract');
 // import * as extract from 'tinyjs-plugin-extract';
 
 // 新建 App
-const app = new Tiny.Application({
-  height: document.documentElement['clientWidth']
-});
+const app = new Tiny.Application();
 const texture = Tiny.Texture.fromImage('https://zos.alipayobjects.com/rmsportal/nJBojwdMJfUqpCWvwyoA.png');
 const sprite = new Tiny.Sprite(texture);
 texture.on('update', function () {
@@ -47,6 +45,3 @@ texture.on('update', function () {
 ## 依赖
 - `Tiny.js`: [Link](http://tinyjs.net/#/docs/api)
 
-## API文档
-
-TODO

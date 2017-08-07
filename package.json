@@ -2,7 +2,7 @@
   "name": "tinyjs-plugin-extract",
   "version": "1.0.6",
   "author": "yiqi",
-  "description": "Tiny.js renderer-specific plugins for exporting content from a renderer",
+  "description": "画布扩展，获取画布的：Image 对象、base64 格式的图片、像素值等等",
   "keywords": [
     "tinyjs",
     "plugin"

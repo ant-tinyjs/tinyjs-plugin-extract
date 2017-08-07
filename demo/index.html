@@ -13,7 +13,7 @@ html, body, p, div {margin:0;padding:0;}
 </head>
 <body>
 
-<script src="http://tinyjs.net/libs/tiny.debug.js"></script>
+<script src="https://a.alipayobjects.com/g/tiny/tiny/1.0.2/tiny.js"></script>
 <script src="../dist/index.js"></script>
 
 <script type="text/javascript">
@@ -27,6 +27,7 @@ html, body, p, div {margin:0;padding:0;}
     .drawCircle(0, 0, 50);
   let image = app.renderer.plugins.extract.image(graphics);
   document.body.appendChild(image);
+
   const texture = Tiny.Texture.fromImage('https://zos.alipayobjects.com/rmsportal/nJBojwdMJfUqpCWvwyoA.png');
   const sprite = new Tiny.Sprite(texture);
   texture.on('update', function () {
