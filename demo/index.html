@@ -13,14 +13,15 @@ html, body, p, div {margin:0;padding:0;}
 </head>
 <body>
 
-<script src="https://a.alipayobjects.com/g/tiny/tiny/1.0.2/tiny.js"></script>
+<script src="https://a.alipayobjects.com/g/tiny/tiny/1.1.0/tiny.js"></script>
 <script src="../dist/index.js"></script>
 
 <script type="text/javascript">
   // 新建 App
   var app = new Tiny.Application({
-    width: 320,
-    height: 320
+    width: 400,
+    height: 400,
+    fixSize: true
   });
   const graphics = new Tiny.Graphics()
     .beginFill(0xFF0000)
