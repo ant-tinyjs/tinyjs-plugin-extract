@@ -45,3 +45,6 @@ texture.on('update', function () {
 ## 依赖
 - `Tiny.js`: [Link](http://tinyjs.net/#/docs/api)
 
+## API文档
+
+http://tinyjs.net/#/plugins/tinyjs-plugin-extract/docs
