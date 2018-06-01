@@ -4,7 +4,7 @@
 
 ## 查看demo
 
-http://tinyjs.net/#/plugins/tinyjs-plugin-extract/demo
+http://tinyjs.net/plugins/tinyjs-plugin-extract.html#demo
 
 ## 引用方法
 
@@ -43,8 +43,8 @@ texture.on('update', function () {
 ```
 
 ## 依赖
-- `Tiny.js`: [Link](http://tinyjs.net/#/docs/api)
+- `Tiny.js`: [Link](http://tinyjs.net/api)
 
 ## API文档
 
-http://tinyjs.net/#/plugins/tinyjs-plugin-extract/docs
+http://tinyjs.net/plugins/tinyjs-plugin-extract.html#docs
