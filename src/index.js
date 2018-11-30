@@ -4,6 +4,7 @@
  *
  * Do not instantiate these plugins directly. It is available from the `renderer.plugins` property.
  * See {@link Tiny.CanvasRenderer#plugins} or {@link Tiny.WebGLRenderer#plugins}.
+ *
  * @example
  * // Create a new app (will auto-add extract plugin to renderer)
  * const app = new Tiny.Application();
@@ -16,6 +17,7 @@
  * // Render the graphics as an HTMLImageElement
  * const image = app.renderer.plugins.extract.image(graphics);
  * document.body.appendChild(image);
+ *
  * @namespace extract
  */
 import webgl from './webgl/WebGLExtract';

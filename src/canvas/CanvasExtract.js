@@ -24,8 +24,7 @@ class CanvasExtract {
   /**
    * Will return a HTML Image of the target
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {HTMLImageElement} HTML Image of the target
    */
   image(target) {
@@ -37,11 +36,9 @@ class CanvasExtract {
   }
 
   /**
-   * Will return a a base64 encoded string of this target. It works by calling
-   *  `CanvasExtract.getCanvas` and then running toDataURL on that.
+   * Will return a a base64 encoded string of this target. It works by calling `CanvasExtract.getCanvas` and then running toDataURL on that.
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {string} A base64 encoded string of the texture.
    */
   base64(target) {
@@ -51,8 +48,7 @@ class CanvasExtract {
   /**
    * Creates a Canvas element, renders this target to it and then returns it.
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {HTMLCanvasElement} A Canvas element with the texture rendered on.
    */
   canvas(target) {
@@ -85,7 +81,7 @@ class CanvasExtract {
     const width = frame.width * resolution;
     const height = frame.height * resolution;
 
-    const canvasBuffer = new Tiny.CanvasRenderTarget(width, height);
+    const canvasBuffer = new Tiny.CanvasRenderTarget(width, height, 1);
     const canvasData = context.getImageData(frame.x * resolution, frame.y * resolution, width, height);
 
     canvasBuffer.context.putImageData(canvasData, 0, 0);
@@ -95,11 +91,9 @@ class CanvasExtract {
   }
 
   /**
-   * Will return a one-dimensional array containing the pixel data of the entire texture in RGBA
-   * order, with integer values between 0 and 255 (included).
+   * Will return a one-dimensional array containing the pixel data of the entire texture in RGBA order, with integer values between 0 and 255 (included).
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {Uint8ClampedArray} One-dimensional array containing the pixel data of the entire texture
    */
   pixels(target) {

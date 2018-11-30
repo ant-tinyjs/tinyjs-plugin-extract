@@ -25,8 +25,7 @@ class WebGLExtract {
   /**
    * Will return a HTML Image of the target
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {HTMLImageElement} HTML Image of the target
    */
   image(target) {
@@ -38,11 +37,9 @@ class WebGLExtract {
   }
 
   /**
-   * Will return a a base64 encoded string of this target. It works by calling
-   *  `WebGLExtract.getCanvas` and then running toDataURL on that.
+   * Will return a a base64 encoded string of this target. It works by calling `WebGLExtract.getCanvas` and then running toDataURL on that.
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {string} A base64 encoded string of the texture.
    */
   base64(target) {
@@ -52,8 +49,7 @@ class WebGLExtract {
   /**
    * Creates a Canvas element, renders this target to it and then returns it.
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {HTMLCanvasElement} A Canvas element with the texture rendered on.
    */
   canvas(target) {
@@ -63,12 +59,14 @@ class WebGLExtract {
     let frame;
     let flipY = false;
     let renderTexture;
+    let generated = false;
 
     if (target) {
       if (target instanceof Tiny.RenderTexture) {
         renderTexture = target;
       } else {
         renderTexture = this.renderer.generateTexture(target);
+        generated = true;
       }
     }
 
@@ -90,7 +88,7 @@ class WebGLExtract {
     const width = frame.width * resolution;
     const height = frame.height * resolution;
 
-    const canvasBuffer = new Tiny.CanvasRenderTarget(width, height);
+    const canvasBuffer = new Tiny.CanvasRenderTarget(width, height, 1);
 
     if (textureBuffer) {
       // bind the buffer
@@ -126,16 +124,17 @@ class WebGLExtract {
       }
     }
 
+    if (generated) {
+      renderTexture.destroy(true);
+    }
     // send the canvas back..
     return canvasBuffer.canvas;
   }
 
   /**
-   * Will return a one-dimensional array containing the pixel data of the entire texture in RGBA
-   * order, with integer values between 0 and 255 (included).
+   * Will return a one-dimensional array containing the pixel data of the entire texture in RGBA order, with integer values between 0 and 255 (included).
    *
-   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture
-   *  to convert. If left empty will use use the main renderer
+   * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
    * @return {Uint8ClampedArray} One-dimensional array containing the pixel data of the entire texture
    */
   pixels(target) {
@@ -144,12 +143,14 @@ class WebGLExtract {
     let resolution;
     let frame;
     let renderTexture;
+    let generated = false;
 
     if (target) {
       if (target instanceof Tiny.RenderTexture) {
         renderTexture = target;
       } else {
         renderTexture = this.renderer.generateTexture(target);
+        generated = true;
       }
     }
 
@@ -188,6 +189,9 @@ class WebGLExtract {
       );
     }
 
+    if (generated) {
+      renderTexture.destroy(true);
+    }
     return webglPixels;
   }
 

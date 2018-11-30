@@ -14,8 +14,8 @@ http://tinyjs.net/plugins/tinyjs-plugin-extract.html#demo
 
 - 也可以直接引用线上cdn地址，注意要使用最新的版本号，例如：
 
-  - https://gw.alipayobjects.com/as/g/tiny-plugins/tinyjs-plugin-extract/1.0.7/index.js
-  - https://gw.alipayobjects.com/as/g/tiny-plugins/tinyjs-plugin-extract/1.0.7/index.debug.js
+  - https://gw.alipayobjects.com/as/g/tiny-plugins/tinyjs-plugin-extract/1.1.0/index.js
+  - https://gw.alipayobjects.com/as/g/tiny-plugins/tinyjs-plugin-extract/1.1.0/index.debug.js
 
 ## 起步
 首先当然是要引入，推荐`NPM`方式，当然你也可以使用`CDN`或下载独立版本，先从几个例子入手吧！
@@ -24,7 +24,7 @@ http://tinyjs.net/plugins/tinyjs-plugin-extract.html#demo
 
 引用 Tiny.js 源码
 ``` html
-<script src="https://gw.alipayobjects.com/as/g/tiny/tiny/1.1.7/tiny.js"></script>
+<script src="https://gw.alipayobjects.com/as/g/tiny/tiny/1.2.0/tiny.js"></script>
 ```
 ``` js
 require('tinyjs-plugin-extract');
@@ -33,7 +33,7 @@ require('tinyjs-plugin-extract');
 
 // 新建 App
 const app = new Tiny.Application();
-const texture = Tiny.Texture.fromImage('https://zos.alipayobjects.com/rmsportal/nJBojwdMJfUqpCWvwyoA.png');
+const texture = Tiny.Texture.fromImage('https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/logo.png');
 const sprite = new Tiny.Sprite(texture);
 texture.on('update', function () {
   const image = app.renderer.plugins.extract.image(sprite);
