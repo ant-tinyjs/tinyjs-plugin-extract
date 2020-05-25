@@ -1,4 +1,23 @@
 /**
+ * extract - The TinyJS plugin
+ *
+ * Copy to https://github.com/pixijs/pixi.js/tree/v4.8.9/src/extract
+ * Some code (c) 2013-2017 Mathew Groves, Chad Engler and other contributors.
+ * See https://github.com/pixijs/pixi.js/graphs/contributors for the full list of contributors.
+ *
+ * @name        tinyjs-plugin-extract
+ * @overview    画布扩展，获取画布的：Image 对象、base64 格式的图片、像素值等等
+ * @author      yiiqii
+ * @license     MIT
+ */
+
+/**
+ * Tiny.js
+ * @external Tiny
+ * @see {@link http://tinyjs.net/}
+ */
+
+/**
  * It provides renderer-specific plugins for exporting content from a renderer.
  * For instance, these plugins can be used for saving an Image, Canvas element or for exporting the raw image data (pixels).
  *
