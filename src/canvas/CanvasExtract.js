@@ -72,14 +72,14 @@ class CanvasExtract {
       frame = renderTexture.frame;
     } else {
       context = renderer.rootContext;
-
+      resolution = renderer.resolution;
       frame = TEMP_RECT;
       frame.width = this.renderer.width;
       frame.height = this.renderer.height;
     }
 
-    const width = frame.width * resolution;
-    const height = frame.height * resolution;
+    const width = Math.floor((frame.width * resolution) + 1e-4);
+    const height = Math.floor((frame.height * resolution) + 1e-4);
 
     const canvasBuffer = new Tiny.CanvasRenderTarget(width, height, 1);
     const canvasData = context.getImageData(frame.x * resolution, frame.y * resolution, width, height);

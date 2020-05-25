@@ -13,8 +13,8 @@ html, body, p, div {margin:0;padding:0;}
 </head>
 <body>
 
-<script src="https://gw.alipayobjects.com/as/g/tiny/tiny/1.2.0/tiny.js"></script>
-<script src="../dist/index.debug.js"></script>
+<script src="https://gw.alipayobjects.com/os/lib/tinyjs/tiny/1.3.1/tiny.js"></script>
+<script src="../index.debug.js"></script>
 
 <script type="text/javascript">
   // 新建 App
@@ -23,14 +23,14 @@ html, body, p, div {margin:0;padding:0;}
     height: 400,
     fixSize: true
   });
-  const graphics = new Tiny.Graphics()
+  var graphics = new Tiny.Graphics()
     .beginFill(0xFF0000)
     .drawCircle(0, 0, 50);
-  let image = app.renderer.plugins.extract.image(graphics);
+  var image = app.renderer.plugins.extract.image(graphics);
   document.body.appendChild(image);
 
-  const texture = Tiny.Texture.fromImage('https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/logo.png');
-  const sprite = new Tiny.Sprite(texture);
+  var texture = Tiny.Texture.fromImage('https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/logo.png');
+  var sprite = new Tiny.Sprite(texture);
   texture.on('update', function () {
     image = app.renderer.plugins.extract.image(sprite);
     document.body.appendChild(image);
