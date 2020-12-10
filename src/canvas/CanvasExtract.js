@@ -49,9 +49,43 @@ class CanvasExtract {
    * Creates a Canvas element, renders this target to it and then returns it.
    *
    * @param {Tiny.DisplayObject|Tiny.RenderTexture} target - A displayObject or renderTexture to convert. If left empty will use use the main renderer
+   * @param {Tiny.Rectangle} [region] - A rect region the you want
+   * @param {number} [fillColor] - When the alpha is 0, it will be fill with this color
    * @return {HTMLCanvasElement} A Canvas element with the texture rendered on.
    */
-  canvas(target) {
+  canvas(target, region, fillColor) {
+    if (!region && !fillColor) {
+      return this._canvas(target);
+    }
+
+    const renderer = this.renderer;
+    const { resolution, width, height } = renderer;
+    const fullRegion = new Tiny.Rectangle(0, 0, width / resolution, height / resolution);
+    const renderTexture = renderer.generateTexture(target, undefined, resolution, fullRegion);
+    let result = this._canvas(renderTexture);
+
+    const frame = region || renderTexture.frame;
+    const canvasData = result.getContext('2d').getImageData(frame.x * resolution, frame.y * resolution, frame.width * resolution, frame.height * resolution);
+    const canvasBuffer = new Tiny.CanvasRenderTarget(frame.width * resolution, frame.height * resolution, 1);
+
+    if (fillColor) {
+      for (let i = 0, n = canvasData.data.length / 4; i < n; i++) {
+        if (canvasData.data[i * 4 + 3] === 0) {
+          canvasData.data[(i * 4)] = (fillColor & 0xff0000) >> 16;
+          canvasData.data[(i * 4) + 1] = (fillColor & 0x00ff00) >> 8;
+          canvasData.data[(i * 4) + 2] = (fillColor & 0x00ff00);
+          canvasData.data[(i * 4) + 3] = 255;
+        }
+      }
+    }
+
+    canvasBuffer.context.putImageData(canvasData, 0, 0);
+    result = canvasBuffer.canvas;
+
+    return result;
+  }
+
+  _canvas(target) {
     const renderer = this.renderer;
     let context;
     let resolution;

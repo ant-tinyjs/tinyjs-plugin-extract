@@ -2,40 +2,26 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>tinyjs-plugin-extract DEMO</title>
+<title>tinyjs-plugin-extract Demo</title>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="yes" name="apple-touch-fullscreen"/>
 <meta content="telephone=no,email=no" name="format-detection"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-<style>
-html, body, p, div {margin:0;padding:0;}
-</style>
+<link href="https://as.alipayobjects.com/g/h5-lib/antui/9.9.0-2/rem/antui.css" rel="stylesheet"/>
 </head>
 <body>
 
-<script src="https://gw.alipayobjects.com/os/lib/tinyjs/tiny/1.3.1/tiny.js"></script>
-<script src="../index.debug.js"></script>
-
-<script type="text/javascript">
-  // 新建 App
-  var app = new Tiny.Application({
-    width: 400,
-    height: 400,
-    fixSize: true
-  });
-  var graphics = new Tiny.Graphics()
-    .beginFill(0xFF0000)
-    .drawCircle(0, 0, 50);
-  var image = app.renderer.plugins.extract.image(graphics);
-  document.body.appendChild(image);
-
-  var texture = Tiny.Texture.fromImage('https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/logo.png');
-  var sprite = new Tiny.Sprite(texture);
-  texture.on('update', function () {
-    image = app.renderer.plugins.extract.image(sprite);
-    document.body.appendChild(image);
-    console.log(image);
-  });
-</script>
+<div class="am-list">
+  <div class="am-list-body">
+    <a href="basic.html" class="am-list-item">
+      <div class="am-list-content">基础使用</div>
+      <div class="am-list-arrow"><span class="am-icon arrow horizontal"></span></div>
+    </a>
+    <a href="region.html" class="am-list-item">
+      <div class="am-list-content">区间和填充色</div>
+      <div class="am-list-arrow"><span class="am-icon arrow horizontal"></span></div>
+    </a>
+  </div>
+</div>
 </body>
 </html>

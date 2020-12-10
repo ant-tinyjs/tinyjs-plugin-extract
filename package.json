@@ -1,7 +1,7 @@
 {
   "name": "tinyjs-plugin-extract",
-  "version": "1.1.1",
-  "author": "yiqi",
+  "version": "1.2.0",
+  "author": "yiiqii",
   "description": "画布扩展，获取画布的：Image 对象、base64 格式的图片、像素值等等",
   "keywords": [
     "tinyjs",
@@ -10,6 +10,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ant-tinyjs/tinyjs-plugin-extract.git"
+  },
+  "engineStrict": true,
+  "engines": {
+    "install-node": "^10.22.1"
   },
   "main": "index.debug.js",
   "files": [
