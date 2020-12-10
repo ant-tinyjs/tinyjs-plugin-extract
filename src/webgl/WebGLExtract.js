@@ -73,7 +73,7 @@ class WebGLExtract {
         if (canvasData.data[i * 4 + 3] === 0) {
           canvasData.data[(i * 4)] = (fillColor & 0xff0000) >> 16;
           canvasData.data[(i * 4) + 1] = (fillColor & 0x00ff00) >> 8;
-          canvasData.data[(i * 4) + 2] = (fillColor & 0x00ff00);
+          canvasData.data[(i * 4) + 2] = (fillColor & 0x0000ff);
           canvasData.data[(i * 4) + 3] = 255;
         }
       }
