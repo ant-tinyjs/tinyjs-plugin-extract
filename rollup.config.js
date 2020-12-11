@@ -9,20 +9,27 @@ import progress from 'rollup-plugin-progress';
 const pkg = require('./package.json');
 
 const production = process.env.BUILD === 'production';
-const file = production ? `index.js` : `index.debug.js`;
+const cjs = process.env.BUILD === 'cjs';
+const file = production ? `index.js` : (cjs ? `main.js` : `index.debug.js`);
+const format = cjs ? 'cjs' : 'umd';
 const banner = `/*!
  * Name: ${pkg.name}
  * Description: ${pkg.description}
  * Author: ${pkg.author}
  * Version: v${pkg.version}
  */
-`;
+${cjs ? `
+// AppX: adapter for the alibaba mini program
+if (typeof $global !== 'undefined') {
+  window = $global.window
+  Tiny = $global.Tiny
+}` : ''}`;
 
 const config = {
   input: 'src/index.js',
   output: {
     file,
-    format: 'umd',
+    format,
     name: 'Tiny.extract',
     banner,
   },
