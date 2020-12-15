@@ -42,6 +42,7 @@
 import webgl from './webgl/WebGLExtract';
 import canvas from './canvas/CanvasExtract';
 
+export * from './tools';
 export {
   webgl,
   canvas,
